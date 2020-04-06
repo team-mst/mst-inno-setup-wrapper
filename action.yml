@@ -1,0 +1,24 @@
+name: 'MST Inno Setup Wrapper'
+description: 'Wrapper around Inno Setup CLI (iscc.exe)'
+author: 'Zeljko Romanovic MST'
+inputs:
+  script-name:
+    description: 'A directory path where the Inno Setup script is.'
+    required: true
+  working-directory:
+    description: 'Path of a directory in which the Inno Setup script is.'
+    default: ''
+    required: false
+outputs:
+  installer-path:
+    description: 'Full file path of the newly created installer.'
+  installer-file-name:
+    description: 'File name of the newly created installer.'
+  installer-simple-file-name:
+    description: 'File name without the extension of the newly created installer.'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+branding:
+  icon: 'archive'
+  color: 'green'
